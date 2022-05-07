@@ -1,0 +1,198 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+
+    font-family:verdana,helvetica,arial,sans-serif;
+    /* font-size:8px; */
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.done {
+    color: #aaa;
+}
+
+.input-with-btn {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+}
+
+/* .tree-node {
+    height: 18px;
+} */
+
+table * {
+    font-size: 10px !important;
+}
+
+#right-panel {
+    display: grid;
+    grid-template-rows: 100px 1fr 1fr;
+    height: 100%;
+    max-width: 1300px;
+}
+
+.row-file-info,
+.row-file-info-2 {
+    gap: 0px;
+}
+
+.row-file-info span,
+.row-file-info-2 span {
+    display: inline-block;
+    margin-right: 0px;
+    min-width: 20px;
+}
+
+.row-file-info span {
+    border-radius: 4px;
+    padding: 0px 4px;
+    font-size: 8px !important;
+    background: rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+
+.debug-files-cell {
+    padding: 2px;
+}
+
+.row-file-info-2 span {
+    border-radius: 4px;
+    padding: 0px 4px;
+    font-size: 8px !important;
+    background: rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+
+.row-file-info .errors {
+    background: red;
+    color: white;
+}
+
+.row-file-info .messages {
+    background: blueviolet;
+    color: white;
+}
+
+#files-list table {
+    
+}
+
+.row-url {
+    width: 100%;
+    padding: 2px;
+    font-size: 8px !important;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.file-size-x { 
+    background: orange;
+}
+
+.file-size-xx { 
+    background: orangered;
+}
+
+.file-size-xxx { 
+    background: red;
+}
+
+.file-size-l { 
+    background: black;
+}
+
+#project-files-info {
+    float: right;
+    padding: 5px;
+}
+
+.pagination-info {
+    font-size: 8px !important;
+}
+
+.debug-log-message-info,
+.debug-log-message-info-2 {
+    gap: 0px;
+}
+
+.debug-log-message-info span,
+.debug-log-message-info-2 span {
+    display: inline-block;
+    margin-right: 0px;
+    min-width: 20px;
+}
+
+.debug-log-message-info span,
+.debug-log-message-info-2 span {
+    border-radius: 4px;
+    padding: 0px 4px;
+    font-size: 8px !important;
+    background: rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+
+.debug-log-message-info span a {
+    font-size: 8px !important;
+}
+
+.debug-message-cell {
+    padding: 5px;
+    font-size: 8px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.debug-message-cell.warning {
+    background: rgba(255, 251, 0, 0.252);
+}
+
+.debug-message-cell.info {
+    background: rgba(0, 4, 255, 0.252);
+}
+
+.debug-message-cell.error {
+    background: rgba(255, 0, 0, 0.252);
+}
+
+.datagrid-row-selected {
+    background: rgba(170, 170, 170, 0.298);
+    color: #000000;
+    /* border: 5px solid rgba(0,0,0,1); */
+    box-shadow: inset 0px 0px 0px 5px rgb(0 0 0 / 40%);
+}
+
+#debug-log-message-info-message-text {
+    padding: 10px;
+    font-size: 10px;
+}
+
+.debug-info-message {
+    word-break: break-all;
+    white-space: normal;
+    background: rgba(0,0,0,0.1);
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.debug-info-file span {
+    border-radius: 4px;
+    padding: 0px 4px;
+    font-size: 8px !important;
+    background: rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+
+#debug-log-message-info-backtrace-table-wrapper {
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+#debug-log-message-info-vars-tree-wrapper {
+    border-top: 1px solid rgba(0,0,0,0.2);
+}

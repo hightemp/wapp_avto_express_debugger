@@ -1,0 +1,42 @@
+version: '3'
+
+networks:
+  nw_wapp_avto_express_debugger:
+
+services:
+  nginx:
+    restart: always
+    container_name: wapp_avto_express_debugger_nginx
+    hostname: wapp_avto_express_debugger.local
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    working_dir: /var/www
+    ports:
+      - "${NGINX_PORT}:80"
+    volumes:
+      - ${WORK_PATH}:/var/www
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/nginx/logs:/var/log/nginx/
+    depends_on:
+      - php_fpm
+    networks:
+      - nw_wapp_avto_express_debugger
+
+  php_fpm:
+    restart: always
+    container_name: wapp_avto_express_debugger_php_fpm
+    hostname: php_fpm
+    build:
+      context: ./docker/php-workspace
+      dockerfile: ./Dockerfile
+      args:
+        TZ: ${WORKSPACE_TIMEZONE}
+    working_dir: /var/www
+    volumes:
+      - ${WORK_PATH}:/var/www
+      - ~/__SpecFolders__/WorkProjects/front_fast_01:/var/www/projects/front_fast_01
+      - ./docker/php-workspace/logs/log1:/var/log/
+      - ./docker/php-workspace/logs/log2:/usr/local/var/log
+    networks:
+      - nw_wapp_avto_express_debugger

@@ -1,0 +1,10 @@
+body, html {
+    width: 800px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+
+    font-family:verdana,helvetica,arial,sans-serif;
+    font-size:12px;
+}

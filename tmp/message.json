@@ -1,0 +1,49 @@
+{
+    "sType": "message",
+    "oBackTrace": {
+        "file": "\/app\/Debugger.class.php",
+        "line": 840,
+        "function": "include_once"
+    },
+    "aBackTrace": [
+        {
+            "file": "\/var\/www\/app\/Debugger.class.php",
+            "line": 746,
+            "function": "fnDebugLog",
+            "class": "Debugger",
+            "type": "->"
+        },
+        {
+            "file": "\/var\/www\/app\/Debugger.class.php",
+            "line": 840,
+            "function": "__d"
+        },
+        {
+            "file": "\/var\/www\/app\/config.php",
+            "line": 8,
+            "args": [
+                "\/var\/www\/app\/Debugger.class.php"
+            ],
+            "function": "include_once"
+        },
+        {
+            "file": "\/var\/www\/app\/includes\/init.php",
+            "line": 3,
+            "args": [
+                "\/var\/www\/app\/config.php"
+            ],
+            "function": "require_once"
+        },
+        {
+            "file": "\/var\/www\/index.php",
+            "line": 11,
+            "args": [
+                "\/var\/www\/app\/includes\/init.php"
+            ],
+            "function": "require_once"
+        }
+    ],
+    "sMessage": "\/index.php",
+    "oVars": {},
+    "iTimestamp": 1651837812727
+}

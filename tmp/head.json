@@ -1,0 +1,17 @@
+{
+    "sURL": "http:\/\/frontdev.localhost\/msg\/",
+    "sIP": "192.168.64.1",
+    "bIsCli": false,
+    "bIsAjax": false,
+    "aArgv": [],
+    "sUser": "www-data",
+    "sSysUser": "",
+    "sSession": "q2iseiouenln8abpmnhsesdte3",
+    "iRequestTimestamp": 1651837812726,
+    "sLang": "php",
+    "bFinished": true,
+    "iCode": 302,
+    "iStartTime": 1651837812726,
+    "iStopTime": 1651837812994,
+    "iTotalTime": 268
+}
