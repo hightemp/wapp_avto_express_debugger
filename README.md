@@ -9,6 +9,15 @@
 - иконки https://famfamfam.com
 - redbeans https://redbeanphp.com/index.php
 
+## Быстрый запуск
+
+```
+php -S 0.0.0.0:80 -t .
+# или 
+docker-compose up -d
+```
+
 ## Скриншоты
 
 ![](/screenshots/screenshot_01.png)
+
