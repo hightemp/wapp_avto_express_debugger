@@ -11,7 +11,9 @@ if ($sMethod == 'scan_debug_files') {
 
     $oLastDebugFile = R::findOne(T_DEBUG_FILES, "ORDER BY id DESC LIMIT 1");
 
-    $aFiles = glob($oProject->path_to_debug_log."/*");
+    $sDLP = fnGetProjectDebugLogPath($oProject);
+
+    $aFiles = glob($sDLP."/*");
     $aAdded = [];
 
     foreach ($aFiles as $sFile) {
@@ -129,8 +131,9 @@ if ($sMethod == 'clear_files_debug_files') {
     R::exec("DELETE FROM $t1 WHERE tprojects_id = ?", [$aRequest['project_id']]);
 
     $oProject = R::findOne(T_PROJECTS, "id = ?", [$aRequest['project_id']]);
-    if ($oProject->path_to_debug_log && is_dir($oProject->path_to_debug_log)) {
-        exec("rm -rf {$oProject->path_to_debug_log}/*");
+    $sDLP = fnGetProjectDebugLogPath($oProject);
+    if ($sDLP && is_dir($sDLP)) {
+        exec("rm -rf {$sDLP}/*");
     }
 
     R::commit();
@@ -176,10 +179,11 @@ if ($sMethod == 'delete_debug_file') {
     R::begin();
 
     $oDebugFile = R::findOne(T_DEBUG_FILES, "id = ?", [$aRequest['id']]);
+    
     $oProject = $oDebugFile->tprojects;
-
-    if ($oProject->path_to_debug_log && is_dir($oProject->path_to_debug_log)) {
-        exec("rm -rf {$oProject->path_to_debug_log}/{$oDebugFile->file_name}");
+    $sDLP = fnGetProjectDebugLogPath($oProject);
+    if ($sDLP && is_dir($sDLP)) {
+        exec("rm -rf {$sDLP}/{$oDebugFile->file_name}");
     }
 
     $t1 = T_DEBUG_FILES;

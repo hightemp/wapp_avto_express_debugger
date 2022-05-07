@@ -67,18 +67,20 @@ export class DebugMessageInfo {
                 border: false,
 
                 rownumbers: true,
+                nowrap: false,
 
+                clientPaging: true,
                 pagination: true,
-                pageSize: 5,
+                pageSize: 100,
                 pageList: [5, 10, 12, 15, 24, 30, 40, 50, 60, 70, 80, 90, 100],
 
                 data: oNode.a_back_trace,
     
                 columns:[[
-                    {title:'file',field:'file',width:230},
-                    {title:'function',field:'function',width:100},
-                    {title:'line',field:'line',width:50},
                     {title:'class',field:'class',width:100},
+                    {title:'function',field:'function',width:150},
+                    {title:'line',field:'line',width:50},
+                    {title:'file',field:'file',width:300},
                 ]],
             });
 
@@ -97,9 +99,10 @@ export class DebugMessageInfo {
                 border: false,
     
                 rownumbers: true,
+                nowrap: false,
     
                 pagination: true,
-                pageSize: 5,
+                pageSize: 100,
                 pageList: [5, 10, 12, 15, 24, 30, 40, 50, 60, 70, 80, 90, 100],
     
                 idField: 'id',

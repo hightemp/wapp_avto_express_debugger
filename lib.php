@@ -1,5 +1,21 @@
 <?php
 
+function fnIsInDocker()
+{
+    return is_file("/.dockerenv");
+}
+
+function fnGetProjectDebugLogPath($oProject)
+{
+    return fnIsInDocker() ? $oProject->path_to_debug_log : $oProject->global_debug_log_path;
+}
+
+function fnGetProjectPath($oProject)
+{
+    return fnIsInDocker() ? $oProject->path : $oProject->global_path;
+}
+
+
 function fnToHumanFileSize($size,$unit="") {
     if( (!$unit && $size >= 1<<30) || $unit == "GB")
         return number_format($size/(1<<30),2)."GB";
@@ -7,7 +23,7 @@ function fnToHumanFileSize($size,$unit="") {
         return number_format($size/(1<<20),2)."MB";
     if( (!$unit && $size >= 1<<10) || $unit == "KB")
         return number_format($size/(1<<10),2)."KB";
-    return number_format($size)." B";
+    return number_format($size)."B";
 }
 
 function fnConvertVarsObjectToTreegrid($aVars, &$aResult=[], $sGK="")
