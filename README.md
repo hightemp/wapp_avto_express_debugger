@@ -1,5 +1,7 @@
 # wapp_avto_express_debugger
 
+[![](https://asdertasd.site/counter/wapp_avto_express_debugger?a=1)](https://asdertasd.site/counter/wapp_avto_express_debugger)
+
 Веб-приложение, отладчик для проектов.
 
 ## Использовано
